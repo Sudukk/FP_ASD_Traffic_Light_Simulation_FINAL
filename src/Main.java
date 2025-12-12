@@ -75,8 +75,8 @@ public class Main {
         }
 
         //6. MEMBACA NODE SUMBER & TUJUAN (harus valid)
-        int source = readValidNode("Enter source node: ", nm);
-        int dest = readValidNode("Enter destination node: ", nm);
+        int source = readValidNode("Enter starting location: ", nm);
+        int dest = readValidNode("Enter destination location: ", nm);
 
         //7. MEMBANGUN SIMULATOR DAN GRAPH
         TrafficLightSimulator sim = new TrafficLightSimulator(numNodes, vehicles);
