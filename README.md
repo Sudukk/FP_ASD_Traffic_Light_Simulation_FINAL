@@ -31,12 +31,7 @@ Proyek ini mengimplementasikan konsep Algoritma dan Struktur Data (ASD) sebagai 
 
 ---
 
-## Prasyarat & Cara Menjalankan
-
-### Prasyarat
-* **Java Development Kit (JDK):** Versi 23 atau yang lebih baru disarankan (sesuai konfigurasi project).
-
-### Cara Compile & Run
+## Cara Compile & Run
 1.  Buka terminal atau CMD di direktori root proyek ini.
 2.  Compile semua file Java:
     ```bash
