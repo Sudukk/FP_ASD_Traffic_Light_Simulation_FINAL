@@ -28,18 +28,3 @@ Proyek ini mengimplementasikan konsep Algoritma dan Struktur Data (ASD) sebagai 
 ### 4. Visualisasi ASCII
 * **Implementasi:** `src/simulation/AsciiGraphRenderer.java`
 * **Fungsi:** Menampilkan representasi graf dan tabel data statistik secara visual di terminal agar mudah dibaca oleh pengguna.
-
----
-
-## Cara Compile & Run
-1.  Buka terminal atau CMD di direktori root proyek ini.
-2.  Compile semua file Java:
-    ```bash
-    javac -d bin src/*.java src/graph/*.java src/simulation/*.java
-    ```
-3.  Jalankan program utama:
-    ```bash
-    java -cp bin Main
-    ```
-
----
