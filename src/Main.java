@@ -6,10 +6,10 @@ public class Main {
     public static void main(String[] args) {
         NodeNameManager nm = new NodeNameManager();
         System.out.println("======== TRAFFIC LIGHT SIMULATOR ========");
-        //MEMBACA JUMLAH NODE (Minimum = 10, harus integer)
+        //baca jmlh node (min = 10)
         int numNodes = readIntWithMin("Enter number of junction (min 10): ", 10);
 
-        //MEMBACA NAMA-NAMA NODE (tidak boleh kosong)
+        //baca nama-nama node (tidak boleh kosong)
         System.out.println("\nEnter junction names:");
         for (int i = 0; i < numNodes; i++) {
             String name;
@@ -28,7 +28,7 @@ public class Main {
             }
         }
 
-        //MEMBACA JUMLAH EDGE (harus connect semua node → min = nodes - 1)
+        //baca jmlh edge (harus connect semua node -> min = nodes - 1)
         int minEdges = numNodes - 1;
         int numEdges = readIntWithMin("\nEnter number of roads (minimum " + minEdges + "): ", minEdges);
 
@@ -36,14 +36,14 @@ public class Main {
         int[] vehicles = new int[numEdges];
         String[] edgeNames = new String[numEdges];
 
-        //MEMBACA KONEKSI EDGE (validasi keberadaan node)
+        //baca koneksi edge (validasi keberadaan node)
         System.out.println("\nEnter junction connections (u v):");
         for (int i = 0; i < numEdges; i++) {
             while (true) {
                 System.out.print("Road " + (i + 1) + ": ");
                 String u = sc.next();
                 String v = sc.next();
-                sc.nextLine(); // konsumsi newline
+                sc.nextLine();
 
                 int uIndex = nm.indexOf(u);
                 int vIndex = nm.indexOf(v);
@@ -61,7 +61,7 @@ public class Main {
                     continue;
                 }
 
-                edges[i][0] = uIndex; // Simpan endpoint edge
+                edges[i][0] = uIndex; //simpan endpoint edge
                 edges[i][1] = vIndex;
 
                 edgeNames[i] = "Road " + u + " ---- " + v; // Nama edge dalam bentuk A ---- B
@@ -69,26 +69,26 @@ public class Main {
             }
         }
 
-        //MEMBACA JUMLAH KENDARAAN PER EDGE (≥ 0)
+        //baca jmlh kendaraan per edge (>= 0)
         System.out.println("\nEnter vehicles per edge:");
         for (int i = 0; i < numEdges; i++) {
             vehicles[i] = readIntWithMin(edgeNames[i] + " vehicles: ", 0);
         }
 
-        //MEMBACA NODE SUMBER & TUJUAN (harus valid)
+        //Membaca node sumber dan tujuan(harus valid)
         int source = readValidNode("Enter starting location: ", nm);
         int dest = readValidNode("Enter destination location: ", nm);
 
-        //MEMBANGUN SIMULATOR DAN GRAPH
+        //Membangun simulator dan graph
         TrafficLightSimulator sim = new TrafficLightSimulator(numNodes, vehicles);
         sim.buildGraph(edges);
 
-        //MENAMPILKAN ASCII GRAPH DAN TABEL KENDARAAN
+        //Menampilkan ASCII graph dan tabel kendaraan
         AsciiGraphRenderer.printGraph(nm, edges, edgeNames, vehicles);
         AsciiGraphRenderer.printVehicleTable(edgeNames, vehicles, sim.getSortedVehiclesDescending());
         AsciiGraphRenderer.printDurationTable(nm, edges, edgeNames, vehicles, sim.getDurations(), sim.getSortedDurationsDescending());
 
-        //OUTPUT SHORTEST PATH
+        //Output shortest path
         System.out.println("\n=== SHORTEST PATH RESULT ===");
 
         var path = sim.shortestPath(source, dest);
@@ -120,8 +120,6 @@ public class Main {
         System.out.printf("Your Route Duration: %d secs\n", totalDuration);
         System.out.printf("Effectiveness: %.2f%%\n", effectiveness);
 
-
-        // Penilaian kualitas (opsional)
         if (effectiveness == 0) {
             System.out.println("Performance: AVERAGE — Matches typical traffic timing.");
         } else if (effectiveness > 0 && effectiveness < 40) {
@@ -153,7 +151,7 @@ public class Main {
             sc.nextLine();
 
             if (value < min) {
-                System.out.println("Value must be ≥ " + min + ". Try again.");
+                System.out.println("Value must be >= " + min + ". Try again.");
             } else {
                 return value;
             }
@@ -176,4 +174,3 @@ public class Main {
         }
     }
 }
-

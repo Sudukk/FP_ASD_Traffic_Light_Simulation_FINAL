@@ -7,12 +7,12 @@ public class NodeNameManager {
     private ArrayList<String> names = new ArrayList<>(); // List index -> nama node
 
     public void add(String name) {
-        map.put(name, names.size()); // Simpan mapping nama -> index
-        names.add(name); // Simpan nama di urutan input
+        map.put(name, names.size()); //simpan mapping nama -> index
+        names.add(name);
     }
 
     public int indexOf(String name) {
-        if(map.containsKey(name)){ // Mengambil index, return -1 jika tidak ada
+        if(map.containsKey(name)){
             return map.get(name);
         }else{
             return -1;
@@ -20,13 +20,13 @@ public class NodeNameManager {
     }
 
     public String nameOf(int index) {
-        if (index < 0 || index >= names.size()) return null; // Cegah index invalid
-        return names.get(index); // Ambil nama berdasarkan index
+        if (index < 0 || index >= names.size()) return null;
+        return names.get(index);
     }
 
     public void printNodes() {
-        System.out.println("\n=== LIST OF JUNCTIONS ==="); // Header daftar node
-        for (String n : names){ // Loop semua node
+        System.out.println("\n=== LIST OF JUNCTIONS ===");
+        for (String n : names){
             System.out.println("[" + n + "]");// Cetak node
         }
 
