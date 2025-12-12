@@ -55,7 +55,7 @@ public class AsciiGraphRenderer {
             int[] durations,
             int[] sortedDurationsDesc
     ) {
-        System.out.println("\n=== EDGE DURATION TABLE (SORTED DESCENDING) ===");
+        System.out.println("\n=== JUNCTION DURATION TABLE (SORTED DESCENDING) ===");
 
         // Dapatkan urutan index hasil sorting durasi
         Integer[] order = getSortOrder(durations, sortedDurationsDesc);

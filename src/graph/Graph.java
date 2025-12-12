@@ -17,12 +17,12 @@ class Edge {
 public class Graph {
     private final int n; //jumlah node
     private final List<List<Edge>> adj; //adjacency list untuk Dijkstra
-    private final List<Edge> edges; //list semua edge
+//    private final List<Edge> edges; //list semua edge
 
     public Graph(int n) {
         this.n = n; //simpan jumlah node
         adj = new ArrayList<>(); //inisialisasi adjacency list
-        edges = new ArrayList<>(); //inisialisasi edge list
+//        edges = new ArrayList<>(); //inisialisasi edge list
         for (int i = 0; i < n; i++){
             adj.add(new ArrayList<>()); //buat list kosong per node
         }
@@ -31,7 +31,7 @@ public class Graph {
     // Add directed edge u -> v
     public void addEdge(int u, int v, int weight) {
         adj.get(u).add(new Edge(u, v, weight)); //tambahkan ke adjacency list
-        edges.add(new Edge(u, v, weight)); //tambahkan ke edge list
+//        edges.add(new Edge(u, v, weight)); //tambahkan ke edge list
     }
 
     // Dijkstra's Algorithm

@@ -43,9 +43,9 @@ public class TrafficLightSimulator {
     }
 
     public int[] getSortedVehiclesDescending() {
-        return MergeSort.sortDescending(vehicles.clone()); //Sort vehicles
+        return MergeSort.sortDescending(vehicles); //Sort vehicles
     }
     public int[] getSortedDurationsDescending() {
-        return MergeSort.sortDescending(durations.clone()); //Sort durations
+        return MergeSort.sortDescending(durations); //Sort durations
     }
 }

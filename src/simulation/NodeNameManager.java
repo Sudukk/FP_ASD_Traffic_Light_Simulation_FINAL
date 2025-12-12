@@ -25,7 +25,7 @@ public class NodeNameManager {
     }
 
     public void printNodes() {
-        System.out.println("\n=== LIST OF NODES ==="); // Header daftar node
+        System.out.println("\n=== LIST OF JUNCTIONS ==="); // Header daftar node
         for (String n : names){ // Loop semua node
             System.out.println("[" + n + "]");// Cetak node
         }
