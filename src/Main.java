@@ -5,10 +5,11 @@ public class Main {
     private static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
         NodeNameManager nm = new NodeNameManager();
-        //1. MEMBACA JUMLAH NODE (Minimum = 10, harus integer)
+        System.out.println("======== TRAFFIC LIGHT SIMULATOR ========");
+        //MEMBACA JUMLAH NODE (Minimum = 10, harus integer)
         int numNodes = readIntWithMin("Enter number of junction (min 10): ", 10);
 
-        //2. MEMBACA NAMA-NAMA NODE (tidak boleh kosong)
+        //MEMBACA NAMA-NAMA NODE (tidak boleh kosong)
         System.out.println("\nEnter junction names:");
         for (int i = 0; i < numNodes; i++) {
             String name;
@@ -27,7 +28,7 @@ public class Main {
             }
         }
 
-        //3. MEMBACA JUMLAH EDGE (harus connect semua node → min = nodes - 1)
+        //MEMBACA JUMLAH EDGE (harus connect semua node → min = nodes - 1)
         int minEdges = numNodes - 1;
         int numEdges = readIntWithMin("\nEnter number of roads (minimum " + minEdges + "): ", minEdges);
 
@@ -35,7 +36,7 @@ public class Main {
         int[] vehicles = new int[numEdges];
         String[] edgeNames = new String[numEdges];
 
-        //4. MEMBACA KONEKSI EDGE (validasi keberadaan node)
+        //MEMBACA KONEKSI EDGE (validasi keberadaan node)
         System.out.println("\nEnter junction connections (u v):");
         for (int i = 0; i < numEdges; i++) {
             while (true) {
@@ -68,26 +69,26 @@ public class Main {
             }
         }
 
-        //5. MEMBACA JUMLAH KENDARAAN PER EDGE (≥ 0)
+        //MEMBACA JUMLAH KENDARAAN PER EDGE (≥ 0)
         System.out.println("\nEnter vehicles per edge:");
         for (int i = 0; i < numEdges; i++) {
             vehicles[i] = readIntWithMin(edgeNames[i] + " vehicles: ", 0);
         }
 
-        //6. MEMBACA NODE SUMBER & TUJUAN (harus valid)
+        //MEMBACA NODE SUMBER & TUJUAN (harus valid)
         int source = readValidNode("Enter starting location: ", nm);
         int dest = readValidNode("Enter destination location: ", nm);
 
-        //7. MEMBANGUN SIMULATOR DAN GRAPH
+        //MEMBANGUN SIMULATOR DAN GRAPH
         TrafficLightSimulator sim = new TrafficLightSimulator(numNodes, vehicles);
         sim.buildGraph(edges);
 
-        //8. MENAMPILKAN ASCII GRAPH DAN TABEL KENDARAAN
+        //MENAMPILKAN ASCII GRAPH DAN TABEL KENDARAAN
         AsciiGraphRenderer.printGraph(nm, edges, edgeNames, vehicles);
         AsciiGraphRenderer.printVehicleTable(edgeNames, vehicles, sim.getSortedVehiclesDescending());
         AsciiGraphRenderer.printDurationTable(nm, edges, edgeNames, vehicles, sim.getDurations(), sim.getSortedDurationsDescending());
 
-        //9. OUTPUT SHORTEST PATH
+        //OUTPUT SHORTEST PATH
         System.out.println("\n=== SHORTEST PATH RESULT ===");
 
         var path = sim.shortestPath(source, dest);
@@ -103,8 +104,8 @@ public class Main {
         int totalDuration = sim.totalDuration(source, dest);
         System.out.println("Total Duration: " + totalDuration + " secs");
 
-        //10. EVALUASI EFEKTIVITAS (0–100 jika bagus, negatif jika lambat)
-        double AVG_DURATION = 120.0;
+        //Mengevaluasi tingkat evektivitas (0–100 jika bagus, negatif jika lambat)
+        double AVG_DURATION = 120.0; //rata-rata lama lampu hijau di persimpangan lampu merah
         double total_avg_duration = AVG_DURATION * numShortestPathNode;
         double effectiveness;
 
@@ -138,7 +139,6 @@ public class Main {
         }
     }
 
-    //METHOD BANTUAN
     //Membaca integer dengan nilai minimum
     private static int readIntWithMin(String msg, int min) {
         int value;
@@ -160,7 +160,7 @@ public class Main {
         }
     }
 
-    // Membaca nama node dan validasi keberadaannya
+    //Membaca nama node dan validasi keberadaannya
     private static int readValidNode(String msg, NodeNameManager nm) {
         while(true) {
             System.out.print(msg);
