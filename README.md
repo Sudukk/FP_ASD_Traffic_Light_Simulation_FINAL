@@ -10,7 +10,7 @@ Proyek ini adalah **Simulasi Lalu Lintas Berbasis CLI (Command Line Interface)**
 
 ---
 
-## 🚀 Fitur & Algoritma Utama
+## Fitur & Algoritma Utama
 Proyek ini mengimplementasikan konsep Algoritma dan Struktur Data (ASD) sebagai berikut:
 
 ### 1. Weighted Directed Graph
@@ -31,7 +31,7 @@ Proyek ini mengimplementasikan konsep Algoritma dan Struktur Data (ASD) sebagai 
 
 ---
 
-## 🛠️ Prasyarat & Cara Menjalankan
+## Prasyarat & Cara Menjalankan
 
 ### Prasyarat
 * **Java Development Kit (JDK):** Versi 23 atau yang lebih baru disarankan (sesuai konfigurasi project).
@@ -48,5 +48,3 @@ Proyek ini mengimplementasikan konsep Algoritma dan Struktur Data (ASD) sebagai 
     ```
 
 ---
-
-## 📂 Struktur Folder
