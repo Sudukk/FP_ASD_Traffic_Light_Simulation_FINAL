@@ -8,8 +8,6 @@ public class MergeSort {
     //  1. Divide  -> membagi array menjadi dua bagian
     //  2. Sort    -> mengurutkan kedua bagian (rekursif)
     //  3. Merge   -> menggabungkan dua array terurut menjadi satu array besar
-    //
-    //variabel arr Array yang belum terurut
     //return    Array baru yang sudah terurut dari terbesar -> terkecil
 
    public static int[] sortDescending(int[] arr) {
