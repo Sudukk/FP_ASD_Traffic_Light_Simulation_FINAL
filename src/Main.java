@@ -167,7 +167,7 @@ public class Main {
 
             int idx = nm.indexOf(name);
             if (idx == -1) {
-                System.out.println("Junction does not exist. Try again.");
+                System.out.println("Junction does not exist. Try again. ");
             } else {
                 return idx;
             }
