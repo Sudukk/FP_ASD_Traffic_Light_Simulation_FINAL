@@ -1,176 +1,244 @@
 import simulation.*;
 import java.util.*;
 
+
 public class Main {
+
+
     private static Scanner sc = new Scanner(System.in);
+
+
     public static void main(String[] args) {
+
+
+        System.out.println(
+                "  _____           __  __ _        _     _       _     _     ____  _                 _       _             \n" +
+                        " |_   _| __ __ _ / _|/ _(_) ___  | |   (_) __ _| |__ | |_  / ___|(_)_ __ ___  _   _| | __ _| |_ ___  _ __ \n" +
+                        "   | || '__/ _` | |_| |_| |/ __| | |   | |/ _` | '_ \\| __| \\___ \\| | '_ ` _ \\| | | | |/ _` | __/ _ \\| '__|\n" +
+                        "   | || | | (_| |  _|  _| | (__  | |___| | (_| | | | | |_   ___) | | | | | | | |_| | | (_| | || (_) | |   \n" +
+                        "   |_||_|  \\__,_|_| |_| |_|\\___| |_____|_|\\__, |_| |_|\\__| |____/|_|_| |_| |_|\\__,_|_|\\__,_|\\__\\___/|_|   \n" +
+                        "                                          |___/                                                           "
+        );
+
+
+        String[] Nodes = {
+                "Perumdos", "Kertajaya1", "Kertajaya2", "Kertajaya3",
+                "Sulawesi", "Dinoyo", "Diponegoro", "Indragiri",
+                "Mayjen_Sungkono1", "Mayjen_Sungkono2", "Mayjen_Sungkono3",
+                "Pandegiling", "Dukuh_Kupang", "Manyar", "Semolowaru1",
+                "Semolowaru2", "Nginden_Semolo", "Manyar_Rejo",
+                "Ngagel_Jaya_Selatan", "Bung_Tomo", "Bengawan",
+                "Kutai1", "Kutai2", "Voza_Tower", "Galaxy_Mall3",
+                "Harris_Hotel", "IKEA_Ciputra_World", "Soto_Ayam_Lamongan_Cak_Har"
+        };
+
+
+        String[] AvailableLocations = {
+                "Perumdos",
+                "Voza_Tower",
+                "Galaxy_Mall3",
+                "Harris_Hotel",
+                "IKEA_Ciputra_World",
+                "Soto_Ayam_Lamongan_Cak_Har"
+        };
+
+
+        String[][] Edges = {
+                {"Perumdos", "Kertajaya1"},
+                {"Kertajaya1", "Perumdos"},
+                {"Kertajaya1", "Kertajaya2"},
+                {"Kertajaya2", "Kertajaya1"},
+                {"Kertajaya2", "Kertajaya3"},
+                {"Kertajaya3", "Kertajaya2"},
+                {"Kertajaya3", "Sulawesi"},
+                {"Sulawesi", "Kertajaya3"},
+                {"Sulawesi", "Dinoyo"},
+                {"Dinoyo", "Sulawesi"},
+                {"Dinoyo", "Diponegoro"},
+                {"Diponegoro", "Dinoyo"},
+                {"Diponegoro", "Indragiri"},
+                {"Indragiri", "Diponegoro"},
+                {"Indragiri", "Mayjen_Sungkono1"},
+                {"Mayjen_Sungkono1", "Indragiri"},
+                {"Mayjen_Sungkono1", "Mayjen_Sungkono2"},
+                {"Mayjen_Sungkono2", "Mayjen_Sungkono1"},
+                {"Mayjen_Sungkono2", "Mayjen_Sungkono3"},
+                {"Mayjen_Sungkono3", "Mayjen_Sungkono2"},
+                {"Mayjen_Sungkono3", "Voza_Tower"},
+                {"Voza_Tower", "Mayjen_Sungkono3"},
+                {"Perumdos", "Manyar"},
+                {"Manyar", "Perumdos"},
+                {"Kertajaya1", "Manyar"},
+                {"Manyar", "Kertajaya1"},
+                {"Manyar", "Semolowaru1"},
+                {"Semolowaru1", "Manyar"},
+                {"Semolowaru1", "Semolowaru2"},
+                {"Semolowaru2", "Semolowaru1"},
+                {"Semolowaru2", "Nginden_Semolo"},
+                {"Nginden_Semolo", "Semolowaru2"},
+                {"Nginden_Semolo", "Manyar_Rejo"},
+                {"Manyar_Rejo", "Nginden_Semolo"},
+                {"Manyar_Rejo", "Ngagel_Jaya_Selatan"},
+                {"Ngagel_Jaya_Selatan", "Manyar_Rejo"},
+                {"Ngagel_Jaya_Selatan", "Bung_Tomo"},
+                {"Bung_Tomo", "Ngagel_Jaya_Selatan"},
+                {"Bung_Tomo", "Bengawan"},
+                {"Bengawan", "Bung_Tomo"},
+                {"Bengawan", "Kutai1"},
+                {"Kutai1", "Bengawan"},
+                {"Kutai1", "Kutai2"},
+                {"Kutai2", "Kutai1"},
+                {"Kutai2", "Indragiri"},
+                {"Indragiri", "Kutai2"},
+                {"Sulawesi", "Pandegiling"},
+                {"Pandegiling", "Sulawesi"},
+                {"Pandegiling", "Dukuh_Kupang"},
+                {"Dukuh_Kupang", "Pandegiling"},
+                {"Dukuh_Kupang", "Mayjen_Sungkono2"},
+                {"Mayjen_Sungkono2", "Dukuh_Kupang"},
+                {"Galaxy_Mall3", "Kertajaya1"},
+                {"Kertajaya1", "Galaxy_Mall3"},
+                {"Harris_Hotel", "Sulawesi"},
+                {"Sulawesi", "Harris_Hotel"},
+                {"IKEA_Ciputra_World", "Indragiri"},
+                {"Indragiri", "IKEA_Ciputra_World"},
+                {"Soto_Ayam_Lamongan_Cak_Har", "Semolowaru1"},
+                {"Semolowaru1", "Soto_Ayam_Lamongan_Cak_Har"},
+        };
+
+
         NodeNameManager nm = new NodeNameManager();
-        System.out.println("======== TRAFFIC LIGHT SIMULATOR ========");
-        //baca jmlh node (min = 10)
-        int numNodes = readIntWithMin("Enter number of junction (min 10): ", 10);
-
-        //baca nama-nama node (tidak boleh kosong)
-        System.out.println("\nEnter junction names:");
-        for (int i = 0; i < numNodes; i++) {
-            String name;
-            while (true) {
-                System.out.print((i + 1) + ". ");
-                name = sc.nextLine().trim();
-
-                if (name.isEmpty()) {
-                    System.out.println("Junction name cannot be empty. Try again.");
-                } else if (nm.indexOf(name) != -1) {
-                    System.out.println("Duplicate name. Use unique names.");
-                } else {
-                    nm.add(name);
-                    break;
-                }
-            }
+        for (String name : Nodes){
+            nm.add(name);
         }
+        int numNodes = Nodes.length;
+        int numEdges = Edges.length;
 
-        //baca jmlh edge (harus connect semua node -> min = nodes - 1)
-        int minEdges = numNodes - 1;
-        int numEdges = readIntWithMin("\nEnter number of roads (minimum " + minEdges + "): ", minEdges);
 
         int[][] edges = new int[numEdges][2];
         int[] vehicles = new int[numEdges];
         String[] edgeNames = new String[numEdges];
 
-        //baca koneksi edge (validasi keberadaan node)
-        System.out.println("\nEnter junction connections (u v):");
+
+        Random rand = new Random();
+
+
+        //Convert nama node ke index + randomisasi jumlah kendaraan
         for (int i = 0; i < numEdges; i++) {
-            while (true) {
-                System.out.print("Road " + (i + 1) + ": ");
-                String u = sc.next();
-                String v = sc.next();
-                sc.nextLine();
+            String u = Edges[i][0];
+            String v = Edges[i][1];
 
-                int uIndex = nm.indexOf(u);
-                int vIndex = nm.indexOf(v);
 
-                if (uIndex == -1) {
-                    System.out.println("Junction '" + u + "' does not exist. Try again.");
-                    continue;
-                }
-                if (vIndex == -1) {
-                    System.out.println("Junction '" + v + "' does not exist. Try again.");
-                    continue;
-                }
-                if (uIndex == vIndex) {
-                    System.out.println("Road cannot connect a node to itself. Try again.");
-                    continue;
-                }
+            int uIndex = nm.indexOf(u);
+            int vIndex = nm.indexOf(v);
 
-                edges[i][0] = uIndex; //simpan endpoint edge
-                edges[i][1] = vIndex;
 
-                edgeNames[i] = "Road " + u + " ---- " + v; // Nama edge dalam bentuk A ---- B
-                break;
-            }
+            edges[i][0] = uIndex;
+            edges[i][1] = vIndex;
+
+
+            edgeNames[i] = "Road " + u + " ---- " + v;
+
+
+            //randomisasi kendaraan min 3, maks 25
+            vehicles[i] = rand.nextInt(23) + 3;
         }
 
-        //baca jmlh kendaraan per edge (>= 0)
-        System.out.println("\nEnter vehicles per edge:");
-        for (int i = 0; i < numEdges; i++) {
-            vehicles[i] = readIntWithMin(edgeNames[i] + " vehicles: ", 0);
-        }
 
-        //Membaca node sumber dan tujuan(harus valid)
+        showAvailableLocations(AvailableLocations);
+
+
+        //tanya user start location dan destination locaationnya
         int source = readValidNode("Enter starting location: ", nm);
         int dest = readValidNode("Enter destination location: ", nm);
 
-        //Membangun simulator dan graph
+
+        //simulator
         TrafficLightSimulator sim = new TrafficLightSimulator(numNodes, vehicles);
         sim.buildGraph(edges);
 
-        //Menampilkan ASCII graph dan tabel kendaraan
+
+        //print details
         AsciiGraphRenderer.printGraph(nm, edges, edgeNames, vehicles);
         AsciiGraphRenderer.printVehicleTable(edgeNames, vehicles, sim.getSortedVehiclesDescending());
-        AsciiGraphRenderer.printDurationTable(nm, edges, edgeNames, vehicles, sim.getDurations(), sim.getSortedDurationsDescending());
+        AsciiGraphRenderer.printDurationTable(nm, edges, vehicles, sim.getDurations(), sim.getSortedDurationsDescending());
 
-        //Output shortest path
-        System.out.println("\n=== SHORTEST PATH RESULT ===");
 
+        //output path
         var path = sim.shortestPath(source, dest);
-        int numShortestPathNode = path.size();
-
         System.out.print("Path: ");
-        for (int node : path) {
-            System.out.print(nm.nameOf(node) + " ");
+        for (int i = 0; i < path.size(); i++) {
+            System.out.print(nm.nameOf(path.get(i)));
+            if (i < path.size() - 1) {
+                System.out.print(" ------> ");
+            }
         }
         System.out.println();
 
-        //Hitung total durasi
+
         int totalDuration = sim.totalDuration(source, dest);
         System.out.println("Total Duration: " + totalDuration + " secs");
 
-        //Mengevaluasi tingkat evektivitas (0–100 jika bagus, negatif jika lambat)
-        double AVG_DURATION = 120.0; //rata-rata lama lampu hijau di persimpangan lampu merah
-        double total_avg_duration = AVG_DURATION * numShortestPathNode;
-        double effectiveness;
 
-        if (totalDuration <= total_avg_duration) {
-            effectiveness = ((total_avg_duration - totalDuration) / total_avg_duration) * 100.0;
-        } else {
-            effectiveness = -((totalDuration - total_avg_duration) / total_avg_duration) * 100.0;
-        }
+        //show effectiveness
+        double AVG = 120.0;
+        double ideal = AVG * path.size();
+        double eff;
+
+
+        if (totalDuration <= ideal)
+            eff = ((ideal-totalDuration)/ideal)*100.0;
+        else
+            eff = -((totalDuration-ideal)/ideal)*100.0;
+
 
         System.out.println("\n=== TRAFFIC LIGHT EFFECTIVENESS ===");
-        System.out.printf("Average Traffic Light Duration for This Route: %.2f secs\n", total_avg_duration);
-        System.out.printf("Your Route Duration: %d secs\n", totalDuration);
-        System.out.printf("Effectiveness: %.2f%%\n", effectiveness);
+        System.out.printf("Route With Average Traffic Light Duration: %.2f secs\n", ideal);
+        System.out.printf("Route With Optimized Traffic Light Duration: %d secs\n", totalDuration);
+        System.out.println();
+        System.out.printf("Effectiveness: %.2f%%\n", eff);
 
-        if (effectiveness == 0) {
-            System.out.println("Performance: AVERAGE — Matches typical traffic timing.");
-        } else if (effectiveness > 0 && effectiveness < 40) {
-            System.out.println("Performance: GOOD — Slightly faster than average.");
-        } else if (effectiveness >= 40 && effectiveness < 80) {
-            System.out.println("Performance: GREAT — Much faster than average.");
-        } else if (effectiveness >= 80) {
-            System.out.println("Performance: EXCELLENT — Extremely efficient route!");
-        } else if (effectiveness > -40) {
-            System.out.println("Performance: BELOW AVERAGE — Slightly slower than typical.");
-        } else if (effectiveness > -100) {
-            System.out.println("Performance: POOR — Noticeably slower than average.");
-        } else {
-            System.out.println("Performance: VERY POOR — Highly inefficient route.");
-        }
+
+        if (eff == 0) System.out.println("Performance: AVERAGE");
+        else if (eff > 0 && eff < 40) System.out.println("Performance: GOOD");
+        else if (eff >= 40 && eff < 80) System.out.println("Performance: GREAT");
+        else if (eff >= 80) System.out.println("Performance: EXCELLENT");
+        else if (eff > -40) System.out.println("Performance: BELOW AVERAGE");
+        else if (eff > -100) System.out.println("Performance: POOR");
+        else System.out.println("Performance: VERY POOR");
     }
 
-    //Membaca integer dengan nilai minimum
-    private static int readIntWithMin(String msg, int min) {
-        int value;
-        while(true) {
-            System.out.print(msg);
-            if (!sc.hasNextInt()) {
-                System.out.println("Invalid input. Enter a number.");
-                sc.nextLine();
-                continue;
-            }
-            value = sc.nextInt();
-            sc.nextLine();
 
-            if (value < min) {
-                System.out.println("Value must be >= " + min + ". Try again.");
-            } else {
-                return value;
+    private static void showAvailableLocations(String[] nodes) {
+        System.out.println("\n=== AVAILABLE LOCATIONS ===");
+
+
+        int cols = 3; // number of columns
+        for (int i = 0; i <nodes.length; i++) {
+            System.out.printf("%-35s", nodes[i]);
+
+
+            if ((i+1)%cols == 0 || i == nodes.length-1) {
+                System.out.println();
             }
         }
+        System.out.println();
     }
 
-    //Membaca nama node dan validasi keberadaannya
+
+    // mengecek apakah node yg ditulis valid atau tidak
     private static int readValidNode(String msg, NodeNameManager nm) {
-        while(true) {
+        while (true) {
             System.out.print(msg);
-            String name = sc.next();
-            sc.nextLine();
+            String name = sc.nextLine().trim();
+
 
             int idx = nm.indexOf(name);
-            if (idx == -1) {
-                System.out.println("Junction does not exist. Try again. ");
-            } else {
-                return idx;
-            }
+            if (idx == -1) System.out.println("Junction not found.");
+            else return idx;
         }
     }
 }
+
+
+
