@@ -2,13 +2,13 @@
 
 > **Simulasi Lalu Lintas Adaptif Berbasis CLI Menggunakan Pendekatan Graph**
 
-![Traffic Light Banner](https://img.shields.io/badge/Traffic-Simulation-red) ![Java](https://img.shields.io/badge/Language-Java-blue) ![Course](https://img.shields.io/badge/Course-Struktur%20Data%20%26%20Algoritma-green)
+![Traffic Light Banner](https://img.shields.io/badge/Traffic-Simulation-red) ![Java](https://img.shields.io/badge/Language-Java-blue) ![Course](https://img.shields.io/badge/Course-Algoritma%20%26%20Struktur%20Data-green)
 
 ## 🏫 Identitas Proyek
 **Mata Kuliah:** Struktur Data dan Algoritma (ASD)  
 **Kelas:** Sistem Informasi  
 **Kelompok:** 3  
-**Dosen Pengampu:** [Tulis Nama Dosen Pengampu Di Sini]
+**Dosen Pengampu:** [Renny Pradina Kusumawardani, S.T., M.T.]
 
 ### 👥 Anggota Kelompok
 | No | Nama Anggota | NRP |
@@ -75,13 +75,11 @@ Proyek ini menerapkan beberapa konsep utama Struktur Data dan Algoritma untuk me
 
 ## 📸 Screenshot Program
 
-*(Ganti link gambar di bawah ini dengan screenshot asli program Anda)*
+**1. Input Data & Visualisasi Graph** ![Visualisasi Graph](https://drive.google.com/file/d/1iMJa8BW4DAkdk7ek6lUnFv7eqSgCZ-2M/view?usp=sharing)
 
-**1. Input Data & Visualisasi Graph** ![Visualisasi Graph](https://via.placeholder.com/600x200?text=Screenshot+Visualisasi+Graph+ASCII)
+**2. Tabel Kepadatan (Sorted)** ![Tabel Sorted](https://drive.google.com/file/d/1s0BTyKekuHPGNyXQ_epyIM2oKwfLEKj-/view?usp=sharing)
 
-**2. Tabel Kepadatan (Sorted)** ![Tabel Sorted](https://via.placeholder.com/600x150?text=Screenshot+Tabel+Kendaraan+Sorted)
-
-**3. Hasil Rute Tercepat** ![Shortest Path](https://via.placeholder.com/600x150?text=Screenshot+Hasil+Dijkstra)
+**3. Hasil Rute Tercepat** ![Shortest Path](https://drive.google.com/file/d/1-9b_S0Uil8CYsUvF_4UoeXZK66d0jMk5/view?usp=sharing)
 
 ---
 
