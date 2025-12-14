@@ -5,7 +5,7 @@
 ![Traffic Light Banner](https://img.shields.io/badge/Traffic-Simulation-red) ![Java](https://img.shields.io/badge/Language-Java-blue) ![Course](https://img.shields.io/badge/Course-Algoritma%20%26%20Struktur%20Data-green)
 
 ## 🏫 Identitas Proyek
-**Mata Kuliah:** Struktur Data dan Algoritma (ASD)  
+**Mata Kuliah:** Algoritma & Struktur Data (ASD)  
 **Kelas:** Sistem Informasi  
 **Kelompok:** 3  
 **Dosen Pengampu:** [Renny Pradina Kusumawardani, S.T., M.T.]
