@@ -1,30 +1,100 @@
-﻿# FP_ASD_Traffic_Light_Simulation_FINAL
+﻿# Traffic Light Simulation (Final Project ASD)
 
-Proyek ini adalah **Simulasi Lalu Lintas Berbasis CLI (Command Line Interface)** yang dirancang untuk memodelkan jaringan jalan raya menggunakan struktur data **Graph**. Program ini menghitung rute tercepat antar persimpangan dan menganalisis tingkat kemacetan menggunakan algoritma pengurutan.
+> **Simulasi Lalu Lintas Adaptif Berbasis CLI Menggunakan Pendekatan Graph**
 
-## 👥 Anggota Kelompok 3
-* **Wikandika Setya Nugroho** (5026241033)
-* **I Gusti Made Sedana Yoga** (5026241037)
-* **Kaka Agastya Herlambang Wahyudi** (5026241115)
-* **Akhtar Ibrahim** (5026241147)
+![Traffic Light Banner](https://img.shields.io/badge/Traffic-Simulation-red) ![Java](https://img.shields.io/badge/Language-Java-blue) ![Course](https://img.shields.io/badge/Course-Struktur%20Data%20%26%20Algoritma-green)
+
+## 🏫 Identitas Proyek
+**Mata Kuliah:** Struktur Data dan Algoritma (ASD)  
+**Kelas:** Sistem Informasi  
+**Kelompok:** 3  
+**Dosen Pengampu:** [Tulis Nama Dosen Pengampu Di Sini]
+
+### 👥 Anggota Kelompok
+| No | Nama Anggota | NRP |
+|:--:|:---|:---|
+| 1 | **Wikandika Setya Nugroho** | 5026241033 |
+| 2 | **I Gusti Made Sedana Yoga** | 5026241037 |
+| 3 | **Kaka Agastya Herlambang Wahyudi** | 5026241115 |
+| 4 | **Akhtar Ibrahim** | 5026241147 |
 
 ---
 
-## Fitur & Algoritma Utama
-Proyek ini mengimplementasikan konsep Algoritma dan Struktur Data (ASD) sebagai berikut:
+## 📖 Isi Laporan
+
+### 1. Latar Belakang Masalah
+Kemacetan di persimpangan kota besar seperti Surabaya sering kali disebabkan oleh sistem lampu lalu lintas konvensional yang bersifat statis (*Fixed Time*). Sistem ini tidak adaptif terhadap volume kendaraan yang berubah-ubah secara *real-time*.
+
+Berdasarkan data:
+* Lampu lalu lintas yang tidak adaptif menyumbang **69%** penyebab kemacetan.
+* Memiliki korelasi yang sangat kuat (**0,829**) terhadap penumpukan kendaraan di jalan raya.
+
+Oleh karena itu, diperlukan sebuah simulasi sistem yang dapat menentukan durasi lampu lalu lintas berdasarkan kepadatan kendaraan dan mencari rute tercepat bagi pengendara.
+
+### 2. Solusi yang Ditawarkan
+Kami mengembangkan **Traffic Light Simulator**, sebuah aplikasi berbasis *Command Line Interface* (CLI) yang memodelkan jaringan jalan raya sebagai **Weighted Directed Graph**.
+
+Sistem ini menawarkan solusi:
+* **Adaptive Timing:** Durasi hambatan (bobot jalan) dihitung secara dinamis berdasarkan jumlah kendaraan.
+* **Shortest Path Finding:** Membantu pengendara menemukan rute tercepat dari satu titik ke titik lain dengan mempertimbangkan kepadatan lalu lintas.
+* **Traffic Analysis:** Memberikan laporan statistik jalan mana yang paling padat dan membutuhkan prioritas penanganan.
+
+### 3. Fitur Utama
+* **Manajemen Node & Edge Dinamis:** Input manual nama persimpangan dan koneksi jalan dengan validasi data.
+* **Visualisasi Graph ASCII:** Menampilkan peta koneksi antar jalan dalam format teks yang mudah dibaca.
+* **Pencarian Rute Tercepat:** Menghitung jalur paling efisien dari *Start* ke *Destination*.
+* **Laporan Efektivitas:** Menghitung persentase efisiensi rute dibandingkan rata-rata normal.
+* **Sorting Kepadatan:** Menampilkan tabel jalan yang diurutkan dari yang paling macet.
+
+---
+
+## 🧠 Algoritma & Implementasi
+
+Proyek ini menerapkan beberapa konsep utama Struktur Data dan Algoritma untuk menunjang fiturnya:
 
 ### 1. Weighted Directed Graph
-* **Implementasi:** `src/graph/Graph.java`
-* **Fungsi:** Memodelkan persimpangan sebagai *Node* dan jalan raya sebagai *Edge* berarah. Setiap jalan memiliki bobot berupa durasi tempuh (berdasarkan jumlah kendaraan).
+* **Deskripsi:** Memodelkan peta lalu lintas di mana persimpangan adalah *Node* dan jalan adalah *Edge* berarah dengan bobot.
+* **Lokasi File:** `src/graph/Graph.java`
+* **Implementasi:** Menggunakan `List<List<Edge>> adj` (Adjacency List).
 
-### 2. Dijkstra's Algorithm (Shortest Path)
-* **Implementasi:** `src/graph/Graph.java`
-* **Fungsi:** Menghitung rute tercepat dan paling efisien dari titik keberangkatan (*Source*) ke tujuan (*Destination*). Menggunakan `PriorityQueue` untuk efisiensi pencarian.
+### 2. Dijkstra’s Algorithm (Shortest Path)
+* **Deskripsi:** Mencari rute terpendek dengan total durasi tempuh paling minim antar dua persimpangan.
+* **Lokasi File:** `src/graph/Graph.java` (Method `dijkstra`)
+* **Implementasi:** Menggunakan `PriorityQueue` untuk eksplorasi node paling efisien.
 
 ### 3. Merge Sort (Descending)
-* **Implementasi:** `src/simulation/MergeSort.java`
-* **Fungsi:** Mengurutkan data jalan berdasarkan **jumlah kendaraan** dan **durasi lampu** dari yang terbesar ke terkecil. Digunakan untuk menampilkan laporan statistik jalan termacet.
+* **Deskripsi:** Mengurutkan data jalan berdasarkan jumlah kendaraan/durasi dari terbesar ke terkecil untuk analisis statistik.
+* **Lokasi File:** `src/simulation/MergeSort.java`
+* **Implementasi:** Algoritma *Divide and Conquer* dengan kompleksitas waktu **O(n log n)**.
 
-### 4. Visualisasi ASCII
-* **Implementasi:** `src/simulation/AsciiGraphRenderer.java`
-* **Fungsi:** Menampilkan representasi graf dan tabel data statistik secara visual di terminal agar mudah dibaca oleh pengguna.
+### 4. Visualisasi & Mapping
+* **Deskripsi:** Memetakan nama persimpangan ke indeks dan merender graf ke layar.
+* **Lokasi File:** `src/simulation/NodeNameManager.java` & `src/simulation/AsciiGraphRenderer.java`
+
+---
+
+## 📸 Screenshot Program
+
+*(Ganti link gambar di bawah ini dengan screenshot asli program Anda)*
+
+**1. Input Data & Visualisasi Graph** ![Visualisasi Graph](https://via.placeholder.com/600x200?text=Screenshot+Visualisasi+Graph+ASCII)
+
+**2. Tabel Kepadatan (Sorted)** ![Tabel Sorted](https://via.placeholder.com/600x150?text=Screenshot+Tabel+Kendaraan+Sorted)
+
+**3. Hasil Rute Tercepat** ![Shortest Path](https://via.placeholder.com/600x150?text=Screenshot+Hasil+Dijkstra)
+
+---
+
+## 🔗 Daftar Proyek Akhir Lainnya
+
+Berikut adalah referensi proyek akhir dari kelompok lain di kelas Sistem Informasi:
+
+1.  **Kelompok 1 - [Judul Proyek]**: [Link Repository]
+2.  **Kelompok 2 - [Judul Proyek]**: [Link Repository]
+3.  **Kelompok 4 - [Judul Proyek]**: [Link Repository]
+4.  **Kelompok 5 - [Judul Proyek]**: [Link Repository]
+5.  **Kelompok 6 - [Judul Proyek]**: [Link Repository]
+
+---
+**Teknologi:** Java JDK 23, IntelliJ IDEA  
+© 2024 Kelompok 3 - Sistem Informasi ITS
