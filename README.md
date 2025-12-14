@@ -103,7 +103,7 @@ Proyek ini menerapkan beberapa konsep utama Struktur Data dan Algoritma untuk me
 
 ## 🔗 Daftar Proyek Akhir Lainnya
 
-Berikut adalah referensi proyek akhir dari kelompok lain di kelas Sistem Informasi:
+Berikut adalah referensi proyek akhir dari kelompok lain:
 
 1.  **D-1 - [Word Rank Guesser Game]**: [\[Link Repository\]](https://github.com/NashiwaInsan/asdfinalproject)
 2.  **D-2 - [Sistem Rekomendasi Event Berbasis Graph]**: [\[Link Repository\]](https://github.com/dedyirama-id/kael-recommendation-system)
