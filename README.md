@@ -105,11 +105,20 @@ Proyek ini menerapkan beberapa konsep utama Struktur Data dan Algoritma untuk me
 
 Berikut adalah referensi proyek akhir dari kelompok lain di kelas Sistem Informasi:
 
-1.  **Kelompok 1 - [Judul Proyek]**: [Link Repository]
-2.  **Kelompok 2 - [Judul Proyek]**: [Link Repository]
-3.  **Kelompok 4 - [Judul Proyek]**: [Link Repository]
-4.  **Kelompok 5 - [Judul Proyek]**: [Link Repository]
-5.  **Kelompok 6 - [Judul Proyek]**: [Link Repository]
+1.  **D-1 - [Word Rank Guesser Game]**: [\[Link Repository\]](https://github.com/NashiwaInsan/asdfinalproject)
+2.  **D-2 - [Sistem Rekomendasi Event Berbasis Graph]**: [\[Link Repository\]](https://github.com/dedyirama-id/kael-recommendation-system)
+3.  **D-3 - [Smart Traffic Light Simulator]**: [\[Link Repository\]](https://github.com/Sudukk/FP_ASD_Traffic_Light_Simulation_FINAL)
+4.  **D-4 - [HotelSeek - Rekomendasi Pemilihan Hotel]**: [\[Link Repository\]](https://github.com/dreadf/hotelseek)
+5.  **D-5 - [ ]**: [\[Link Repository\]]( )
+6.  **D-6 - [To-Do List]**: [\[Link Repository\]](https://github.com/anggraitapr/ASDFPTODOLIST)
+7.  **D-7 - [Sistem Antrian IGD]**: [\[Link Repository\]](https://github.com/WilliamHanantha/FP-ASD)
+8.  **D-8 - [Sistem Rekomendasi Jadwal Latihan dan Nutrisi Gym]**: [\[Link Repository\]](https://github.com/tyr3x74/GymPlan)
+9.  **D-9 - [Sistem Rekomendasi Teman Berdasarkan Mutual Friends]**: [\[Link Repository\]](https://github.com/mariaelvina/FinalProjectD9)
+10.  **D-10 - [Monster Chase]**: [\[Link Repository\]](https://github.com/Aida41104/FPASD)
+11.  **D-11 - [Warehouse Management System]**: [\[Link Repository\]](https://github.com/FasaBil/ASD-D11-Inventory-Management)
+12.  **D-12 - [Smart Traveling Planner]**: [\[Link Repository\]](https://github.com/Dziky05/FP-ASD-KEL-13)
+13.  **D-13 - [Sistem Manajemen Inventaris Gudang dan Optimasi Rute Pengiriman]**: [\[Link Repository\]](https://github.com/FashaAsshofa/Final-Project-ASD-D-Kelompok-13)
+14.  **D-14 - [Rekomendasi Film berbasis Graph]**: [\[Link Repository\]](https://github.com/neutralcheeze/final-project-asd.git)
 
 ---
 **Teknologi:** Java JDK 23, IntelliJ IDEA  
