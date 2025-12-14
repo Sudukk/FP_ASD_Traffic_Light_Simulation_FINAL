@@ -75,11 +75,14 @@ Proyek ini menerapkan beberapa konsep utama Struktur Data dan Algoritma untuk me
 
 ## 📸 Screenshot Program
 
-**1. Input Data & Visualisasi Graph** ![Visualisasi Graph](https://drive.google.com/file/d/1iMJa8BW4DAkdk7ek6lUnFv7eqSgCZ-2M/view?usp=sharing)
+**1. Input Data & Visualisasi Graph**
+![Visualisasi Graph](https://drive.google.com/uc?export=view&id=1iMJa8BW4DAkdk7ek6lUnFv7eqSgCZ-2M)
 
-**2. Tabel Kepadatan (Sorted)** ![Tabel Sorted](https://drive.google.com/file/d/1s0BTyKekuHPGNyXQ_epyIM2oKwfLEKj-/view?usp=sharing)
+**2. Tabel Kepadatan (Sorted)**
+![Tabel Sorted](https://drive.google.com/uc?export=view&id=1s0BTyKekuHPGNyXQ_epyIM2oKwfLEKj-)
 
-**3. Hasil Rute Tercepat** ![Shortest Path](https://drive.google.com/file/d/1-9b_S0Uil8CYsUvF_4UoeXZK66d0jMk5/view?usp=sharing)
+**3. Hasil Rute Tercepat**
+![Shortest Path](https://drive.google.com/uc?export=view&id=1-9b_S0Uil8CYsUvF_4UoeXZK66d0jMk5)
 
 ---
 
