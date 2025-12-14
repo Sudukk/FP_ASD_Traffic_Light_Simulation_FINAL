@@ -86,10 +86,8 @@ Proyek ini menerapkan beberapa konsep utama Struktur Data dan Algoritma untuk me
 
 ---
 
-## 📸 Screenshot Program
-**Video Link**
-
-https://youtu.be/X4x61kZJHm4
+## 📸 Video Link
+**[Video Link](https://youtu.be/X4x61kZJHm4)**
 
 ---
 
