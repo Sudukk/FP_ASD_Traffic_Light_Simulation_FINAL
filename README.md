@@ -8,7 +8,7 @@
 **Mata Kuliah:** Algoritma & Struktur Data (ASD)  
 **Kelas:** Sistem Informasi  
 **Kelompok:** 3  
-**Dosen Pengampu:** [Renny Pradina Kusumawardani, S.T., M.T.]
+**Dosen Pengampu:** Renny Pradina Kusumawardani, S.T., M.T.
 
 ### 👥 Anggota Kelompok
 | No | Nama Anggota | NRP |
@@ -83,6 +83,21 @@ Proyek ini menerapkan beberapa konsep utama Struktur Data dan Algoritma untuk me
 
 **3. Hasil Rute Tercepat**
 ![Shortest Path](https://drive.google.com/uc?export=view&id=1-9b_S0Uil8CYsUvF_4UoeXZK66d0jMk5)
+
+---
+
+## 📸 Video Link
+**[Video Link](https://youtu.be/X4x61kZJHm4)**
+
+---
+
+## 📝 Riwayat Pembaruan (Update Log)
+
+**Update: 14 Desember 2025 (00:14)**
+* **Deskripsi Update:** Dilakukan penyederhanaan dan perbaikan pada logika input pengguna. Sistem diperbarui agar pengguna cukup memasukkan input berupa **Source** (Lokasi Keberangkatan) dan **Destination** (Tujuan Akhir) saja untuk menjalankan simulasi pencarian rute tercepat.
+* **File Terdampak:**
+    * `src/Main.java`
+    * `src/simulation/AsciiGraphRenderer.java`
 
 ---
 
